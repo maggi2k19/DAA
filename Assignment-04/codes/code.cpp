@@ -16,6 +16,14 @@ void printArray(string arr[],int n){
     }
 }
 
+string commonPrefix(string str1, string str2){
+    // the motive of this function is to return the 
+    // commonPrefix (longest) of any two given string
+
+    
+}
+
+
 int main(){
     // how many strings are given in input ?
     int numberOfStrings;
@@ -29,5 +37,5 @@ int main(){
         cin>>arr[i];
     }
     // Testing if all the inputs have been successfully stored in array
-    printArray(arr,numberOfStrings);
+    // printArray(arr,numberOfStrings);
 }

@@ -26,7 +26,6 @@ string commonPrefix(string str1, string str2){
     // printing both the strings to check if the string is passed successfully 
     // cout<<str1<<"--\n"<<str2<<"--\n";
 
-<<<<<<< HEAD
     // n1 : size of 1st string
     // n2 : size of second string
     int n1 = str1.size(), n2 = str2.size();
@@ -37,18 +36,15 @@ string commonPrefix(string str1, string str2){
     while(i<n1 && j<n2){
         if(str1[i]==str2[j]){
             // if character at both strings is equal then it will be included in our common prefix
-=======
     int n1 = str1.size(), n2 = str2.size();
 
     int i=0,j=0;
     while(i<n1 && j<n2){
         if(str1[i]==str2[j]){
->>>>>>> 0de1228f9cace0852e26083c0b5d126262261ada
             ans.push_back(str1[i]);
             i++,j++;
         }
         else{
-<<<<<<< HEAD
             // if current index of both strings is not equal 
             // we cannot get any longer commong prefix
             break;
@@ -56,11 +52,9 @@ string commonPrefix(string str1, string str2){
     }
     // ans stores our common prefix
     // return it
-=======
             break;
         }
     }
->>>>>>> 0de1228f9cace0852e26083c0b5d126262261ada
     return ans;
 }
 
@@ -90,10 +84,6 @@ int main(){
     // printArray(arr,numberOfStrings);
 
     // sample call to commonPrefix function before working on it 
-<<<<<<< HEAD
-    // cout<<commonPrefix("abcdef","abcd");
-}
-=======
+    // commonPrefix is complete
     cout<<commonPrefix("abcdef","abcd");
 }
->>>>>>> 0de1228f9cace0852e26083c0b5d126262261ada

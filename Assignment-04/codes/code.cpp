@@ -20,6 +20,14 @@ string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
     // commonPrefix (longest) of any two given string
 
+
+}
+
+string solveLCP(string arr[],int start,int end){
+    // this function is the solution of our problem statement
+    // it will return the LCP (longest common prefix) of given array of string
+    // we will use divide and conquer algorithm
+
     
 }
 
@@ -37,5 +45,6 @@ int main(){
         cin>>arr[i];
     }
     // Testing if all the inputs have been successfully stored in array
+    // test successfull ! 
     // printArray(arr,numberOfStrings);
 }

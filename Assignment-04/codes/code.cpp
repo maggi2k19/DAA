@@ -58,10 +58,33 @@ string solveLCP(string arr[],int start,int end){
     // we will use divide and conquer algorithm
 
     // printing the array to check if the string is passed successfully
-    for(int i=start;i<=end;++i){
-        cout<<arr[i]<<" ";
+    // for(int i=start;i<=end;++i){
+    //     cout<<arr[i]<<" ";
+    // }
+
+    string ans = "";
+    if(start==end){
+        // if only one string is present, then the string itself is LCP
+        return arr[start];
     }
 
+    if(start<end){
+        // dividing the given problem into two smaller problems
+        int mid = start + (end-start)/2;
+
+        // str1 is the LCP of all the strings from start-mid index
+        string str1 = solveLCP(arr,start,mid);
+
+        // str1 is the LCP of remaining strings (mid to end)
+        string str2 = solveLCP(arr,mid+1,end);
+
+        // commongPrefix of these two strings from left side and right side of array
+        // is the LCP of whole array
+        return commonPrefix(str1,str2);
+    }
+    // if start > end
+    // invalid call 
+    // hence empty string is returned
     return "";
 }
 
@@ -87,5 +110,7 @@ int main(){
     // cout<<commonPrefix("abcdef","abcd");
 
     // sample call to solveLCP function before working on it
+    // cout<<solveLCP(arr,0,numberOfStrings-1);
+
     cout<<solveLCP(arr,0,numberOfStrings-1);
 }

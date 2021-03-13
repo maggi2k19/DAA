@@ -20,7 +20,7 @@ string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
     // commonPrefix (longest) of any two given string
 
-
+    return "";
 }
 
 string solveLCP(string arr[],int start,int end){
@@ -28,7 +28,7 @@ string solveLCP(string arr[],int start,int end){
     // it will return the LCP (longest common prefix) of given array of string
     // we will use divide and conquer algorithm
 
-    
+    return "";
 }
 
 

@@ -33,14 +33,11 @@ string commonPrefix(string str1, string str2){
     // i : current index of first string
     // j : current index of second string
     int i=0,j=0;
-    while(i<n1 && j<n2){
-        if(str1[i]==str2[j]){
-            // if character at both strings is equal then it will be included in our common prefix
-    int n1 = str1.size(), n2 = str2.size();
 
-    int i=0,j=0;
     while(i<n1 && j<n2){
         if(str1[i]==str2[j]){
+            // if current character of both strings is equal
+            // include it in our common prefix
             ans.push_back(str1[i]);
             i++,j++;
         }
@@ -52,9 +49,6 @@ string commonPrefix(string str1, string str2){
     }
     // ans stores our common prefix
     // return it
-            break;
-        }
-    }
     return ans;
 }
 
@@ -62,6 +56,11 @@ string solveLCP(string arr[],int start,int end){
     // this function is the solution of our problem statement
     // it will return the LCP (longest common prefix) of given array of string
     // we will use divide and conquer algorithm
+
+    // printing the array to check if the string is passed successfully
+    for(int i=start;i<=end;++i){
+        cout<<arr[i]<<" ";
+    }
 
     return "";
 }
@@ -85,5 +84,8 @@ int main(){
 
     // sample call to commonPrefix function before working on it 
     // commonPrefix is complete
-    cout<<commonPrefix("abcdef","abcd");
+    // cout<<commonPrefix("abcdef","abcd");
+
+    // sample call to solveLCP function before working on it
+    cout<<solveLCP(arr,0,numberOfStrings-1);
 }

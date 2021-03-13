@@ -24,12 +24,20 @@ string commonPrefix(string str1, string str2){
     string ans = "";
 
     // printing both the strings to check if the string is passed successfully 
-<<<<<<< HEAD
     // cout<<str1<<"--\n"<<str2<<"--\n";
-=======
-    cout<<str1<<"--\n"<<str2<<"--\n";
->>>>>>> 5f701ffb7e85234d828b7d6c6747cc49da6c3452
 
+    int n1 = str1.size(), n2 = str2.size();
+
+    int i=0,j=0;
+    while(i<n1 && j<n2){
+        if(str1[i]==str2[j]){
+            ans.push_back(str1[i]);
+            i++,j++;
+        }
+        else{
+            break;
+        }
+    }
     return ans;
 }
 
@@ -37,14 +45,6 @@ string solveLCP(string arr[],int start,int end){
     // this function is the solution of our problem statement
     // it will return the LCP (longest common prefix) of given array of string
     // we will use divide and conquer algorithm
-    
-    // start is the starting index of array
-    // end is the last valid index of our array
-
-    // printing the array to check if the string is passed successfully
-    for(int i=start;i<=end;++i){
-        cout<<arr[i]<<" ";
-    }
 
     return "";
 }
@@ -67,13 +67,5 @@ int main(){
     // printArray(arr,numberOfStrings);
 
     // sample call to commonPrefix function before working on it 
-<<<<<<< HEAD
-    // cout<<commonPrefix("abcdef","abcd");
-
-    // sample call to solveLCP function before working on it 
-    solveLCP(arr,0,numberOfStrings-1);
-}
-=======
     cout<<commonPrefix("abcdef","abcd");
 }
->>>>>>> 5f701ffb7e85234d828b7d6c6747cc49da6c3452

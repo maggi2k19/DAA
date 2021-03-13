@@ -20,13 +20,27 @@ string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
     // commonPrefix (longest) of any two given string
 
-    return "";
+    // ans will store the commonPrefix between str1 and str2
+    string ans = "";
+
+    // printing both the strings to check if the string is passed successfully 
+    // cout<<str1<<"--\n"<<str2<<"--\n";
+
+    return ans;
 }
 
 string solveLCP(string arr[],int start,int end){
     // this function is the solution of our problem statement
     // it will return the LCP (longest common prefix) of given array of string
     // we will use divide and conquer algorithm
+    
+    // start is the starting index of array
+    // end is the last valid index of our array
+
+    // printing the array to check if the string is passed successfully
+    for(int i=start;i<=end;++i){
+        cout<<arr[i]<<" ";
+    }
 
     return "";
 }
@@ -47,4 +61,10 @@ int main(){
     // Testing if all the inputs have been successfully stored in array
     // test successfull ! 
     // printArray(arr,numberOfStrings);
+
+    // sample call to commonPrefix function before working on it 
+    // cout<<commonPrefix("abcdef","abcd");
+
+    // sample call to solveLCP function before working on it 
+    solveLCP(arr,0,numberOfStrings-1);
 }

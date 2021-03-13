@@ -20,7 +20,13 @@ string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
     // commonPrefix (longest) of any two given string
 
-    return "";
+    // ans will store the commonPrefix between str1 and str2
+    string ans = "";
+
+    // printing both the strings to check if the string is passed successfully 
+    cout<<str1<<"--\n"<<str2<<"--\n";
+
+    return ans;
 }
 
 string solveLCP(string arr[],int start,int end){
@@ -47,4 +53,7 @@ int main(){
     // Testing if all the inputs have been successfully stored in array
     // test successfull ! 
     // printArray(arr,numberOfStrings);
+
+    // sample call to commonPrefix function before working on it 
+    cout<<commonPrefix("abcdef","abcd");
 }

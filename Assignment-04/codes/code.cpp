@@ -16,10 +16,10 @@ void printArray(string arr[],int n){
     }
 }
 
-int getRandomNumber(int r){
-    // get a random number less than r 
+int getRandomNumber(int l, int r){
+    // get a random number in range [l,r]
     srand(time(NULL)); 
-    int num = 1 + rand()%(r+1);
+    int num = l + rand()%(r-l+1);
     return num;
 }
 
@@ -99,6 +99,8 @@ string solveLCP(string arr[],int start,int end){
 
 int main(){
     // how many strings are given in input ?
+    // cout<<getRandomNumber(5,10);
+    // return 0;
     cout<<"Enter count of strings : \n";
     int numberOfStrings;
     cin>>numberOfStrings;

@@ -9,6 +9,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// randomChars is a string which contains all the lowerCase and uppercase characters
+string randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz";
+
 void printArray(string arr[],int n){
     // print all the elements of given array
     for(int i=0;i<n;++i){
@@ -18,25 +21,29 @@ void printArray(string arr[],int n){
 
 int getRandomNumber(int l, int r){
     // get a random number in range [l,r]
-    srand(time(NULL)); 
     int num = l + rand()%(r-l+1);
     return num;
 }
 
 char getRandomChar(){
-    
-    // to genrate lowercase as well as uppercase characters randomly
-    // if p is 0 then we will generate lowercase character
-    // otherwise we will genrate uppercase character
-    int p = getRandomNumber(0,1);
-
-    int ascii = getRandomNumber(0,25);
-    char ans;
-    if(p==0)ans = ascii + 'a';
-    else ans = ascii + 'A';
-    return ans;
+    // randomChar string , declared globally at top
+    // has all the lowercase and uppercase characters
+    // generate a random index and pick a character from that string
+    int num = rand()%(52);
+    return randomChars[num];
 }
 
+string getRandomString(int n){
+    // get a random string of length n
+
+    string randomString = "";
+
+    for(int i=0;i<n;++i){
+        char c = getRandomChar();
+        randomString.push_back(c);
+    }
+    return randomString;
+}
 
 string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
@@ -112,23 +119,33 @@ string solveLCP(string arr[],int start,int end){
 
 
 int main(){
+    srand(time(NULL)); 
     // how many strings are given in input ?
     // cout<<getRandomNumber(5,10);
     // return 0;
     // cout<<getRandomChar()<<"\n";
     // return 0;
-    cout<<"Enter count of strings : \n";
+    // cout<<getRandomString(5)<<"\n";
+    // return 0;
+
+    // cout<<"Enter count of strings : \n";
     int numberOfStrings;
-    cin>>numberOfStrings;
+    numberOfStrings = getRandomNumber(1,5);
+    // cin>>numberOfStrings;
 
     // an array of strings to store all the strings
     string arr[numberOfStrings];
     
-    cout<<"Enter "<<numberOfStrings<<" Strings : \n";
+    // cout<<"Enter "<<numberOfStrings<<" Strings : \n";
     for(int i=0;i<numberOfStrings;++i){
-        // taking strings from user as input and storing it into the string array
-        cin>>arr[i];
+        int randSize = getRandomNumber(1,8);
+        arr[i] = getRandomString(randSize);
+        // cin>>arr[i];
     }
+    cout<<"Total : "<<numberOfStrings<<" string(s)\n";
+    cout<<"--------------------------------------------\n";
+    printArray(arr,numberOfStrings);
+    cout<<"--------------------------------------------";
     // Testing if all the inputs have been successfully stored in array
     // test successfull ! 
     // printArray(arr,numberOfStrings);
@@ -140,5 +157,12 @@ int main(){
     // sample call to solveLCP function before working on it
     // cout<<solveLCP(arr,0,numberOfStrings-1);
 
-    cout<<solveLCP(arr,0,numberOfStrings-1);
+    string LCP = solveLCP(arr,0,numberOfStrings-1);
+    if(LCP.size()==0){
+        cout<<"\nNo common prefix \n";
+    }
+    else{
+        cout<<"\nLCP of given strings is :\n";
+        cout<<LCP<<"\n";
+    }
 }

@@ -16,6 +16,14 @@ void printArray(string arr[],int n){
     }
 }
 
+int getRandomNumber(int r){
+    // get a random number less than r 
+    srand(time(NULL)); 
+    int num = 1 + rand()%(r+1);
+    return num;
+}
+
+
 string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
     // commonPrefix (longest) of any two given string
@@ -91,12 +99,14 @@ string solveLCP(string arr[],int start,int end){
 
 int main(){
     // how many strings are given in input ?
+    cout<<"Enter count of strings : \n";
     int numberOfStrings;
     cin>>numberOfStrings;
 
     // an array of strings to store all the strings
     string arr[numberOfStrings];
     
+    cout<<"Enter "<<numberOfStrings<<" Strings : \n";
     for(int i=0;i<numberOfStrings;++i){
         // taking strings from user as input and storing it into the string array
         cin>>arr[i];

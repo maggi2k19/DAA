@@ -23,6 +23,20 @@ int getRandomNumber(int l, int r){
     return num;
 }
 
+char getRandomChar(){
+    
+    // to genrate lowercase as well as uppercase characters randomly
+    // if p is 0 then we will generate lowercase character
+    // otherwise we will genrate uppercase character
+    int p = getRandomNumber(0,1);
+
+    int ascii = getRandomNumber(0,25);
+    char ans;
+    if(p==0)ans = ascii + 'a';
+    else ans = ascii + 'A';
+    return ans;
+}
+
 
 string commonPrefix(string str1, string str2){
     // the motive of this function is to return the 
@@ -100,6 +114,8 @@ string solveLCP(string arr[],int start,int end){
 int main(){
     // how many strings are given in input ?
     // cout<<getRandomNumber(5,10);
+    // return 0;
+    // cout<<getRandomChar()<<"\n";
     // return 0;
     cout<<"Enter count of strings : \n";
     int numberOfStrings;

@@ -1,1 +1,122 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\graphicspath{ {./images/} }
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\pgfplotsset{width=6.5cm,compat=1.9}
 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily}, 
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=black,
+}
+
+\urlstyle{same}
+
+\title{\textbf{An algorithm to find the longest common prefix of the given set of strings}}
+\author{Kandagatla Meghana Santhoshi- IIB2019030,\\* Debasish Das - IIB2019031, \\* Surya Kant- IIB2019032 }
+\date{Date: 14-03-2021}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+In this paper we have discussed a Divide and Conquer
+algorithm to find the longest common prefix from the given set of strings. We have also discussed the time and space complexity of the method.
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section{Problem}
+Given a set of strings, you are tasked to find the longest common prefix from the set of strings and print prefix.
+
+\section{Keywords}
+Strings,Array of strings,Prefix,Longest Common Prefix(LCP),Divide and Conquer.
+
+\section{Introduction}
+From the word Divide and conquer,we can say conquering the required result by  dividing the larger elements into smaller ones.In this approach a problem is divided into smaller parts further into smaller problems divided and then solved till we reach base case.
+
+This technique can be divided into the following three parts:
+
+Divide- This involves dividing the problem into small sub problems.
+
+Conquer- We will celebrate victory of the sub problem by calling further sub problems recursively until sub problem solved.
+
+Combine- Given problems is solved by combining results from the recursively called sub problems.
+
+\section{Algorithm Analysis}
+To find longest common prefix from the given set of strings:
+ 
+\begin{enumerate}
+\item We check if there is only one string,if yes clearly we return the whole string as LCP(Longest common prefix).Else We divide them into two sub problems.
+\item Let us assume index to the middle element be mid,now we will find LCP of array of strings from start to mid and mid+1 to end.
+\item Now we divide the strings of arrays till we reach the base case i.e,till start = end.
+\item Then we try to find the common prefix from the returned strings of the sub problems.
+\begin{itemize}
+\item In this way, define a new subproblem with half the size of arrays and find Longest common prefix(LCP).
+\end{itemize}
+\end{enumerate}
+
+
+\section{Pseudo Code}
+
+\begin{lstlisting}
+arr[] has set of strings stored as an array,start and end are the variables used to point the start and end of arr[].string1,string2 strings to compare and find LCP.ans is the string used to store LCP of string 1 and string 2.
+
+printArray Function:
+    for i <- 0 to n
+        print arr[i]
+
+commonPrefix function:
+    n1 <- size of string1 and n2 <- size of string2
+    initialise i,j <- 0
+    while(i<n1 && j<n2)
+        if current character of string1 and string2 are equal
+            include in common prefix => ans.push_back(string1[i])
+            increment i and j => i++ and j++
+        else 
+            we break the while loop
+    return ans
+solveLCP function:
+    if start = end 
+        return arr[start]
+    else if start > end
+        return
+    else 
+        mid <- start+end/2
+        string1 <- solveLCP(start,mid)
+        string2 <- solveLCP(mid+1,end)
+        
+    return commonPrefix(string1,string2)
+        
+\end{lstlisting}
+
+\end{multicols}
+\end{document}

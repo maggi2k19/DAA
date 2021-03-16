@@ -41,9 +41,9 @@
 
 \urlstyle{same}
 
-\title{\textbf{An algorithm to find the longest common prefix of the given set of strings}}
+\title{\textbf{An algorithm to find the longest common prefix from the given set of strings}}
 \author{Kandagatla Meghana Santhoshi- IIB2019030,\\* Debasish Das - IIB2019031, \\* Surya Kant- IIB2019032 }
-\date{Date: 14-03-2021}
+\date{Date: 13-03-2021}
 
 \begin{document}
 \maketitle
@@ -84,6 +84,9 @@ To find longest common prefix from the given set of strings:
 \end{itemize}
 \end{enumerate}
 
+\begin{center}
+\includegraphics[scale=0.15]{example_as04.jpg}
+\end{center}
 
 \section{Pseudo Code}
 
@@ -117,6 +120,24 @@ solveLCP function:
     return commonPrefix(string1,string2)
         
 \end{lstlisting}
+
+\subsection{Time Complexity Analysis}
+
+We can observe that , we traversing every string in the given set of strings. Time complexity will be bigO(n*m) / O(n*m).Where n is Number of strings in the given set of strings and m is The longest string of all strings in the set.
+
+\subsection{Space Complexity}
+
+The space complexity of the Program is O(m*log(n)) Because of the space allocation for resultant strings in each subproblem.We can expect log(n) divisions.Each string returned by the subproblem can have maximum length of m.
+
+
+\section{Conclusion}
+Using Divide and Conquer algorithm , we have our time complexity to be O(n*m).\newline
+This can be used in Constructing suffix tree , finding the number of occurrences in a pattern.
+
+\section{References}
+1.Introduction to Algorithms by Thomas.H.cormen\newline
+2.https://afteracademy.com/blog/longest-common-prefix\newline
+3.https://afteracademy.com/blog/longest-common-prefix \newline
 
 \end{multicols}
 \end{document}

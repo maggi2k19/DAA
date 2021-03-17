@@ -9,6 +9,6 @@
 
 **Group No-** 11
 
-**Instructor Name-** Rahul Kala
+**Instructor Name-** Mr.Rahul Kala
 
-**Mentor Name-** Md. Meraz
+**Mentor Name-** Mr.Md. Meraz

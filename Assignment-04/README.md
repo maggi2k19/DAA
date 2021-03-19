@@ -69,7 +69,7 @@ The time complexity of this algorithm is O(n*m).Where n is the Number of strings
 
 The space complexity of the Program is O(m*log(n)) Because of the space allocation for resultant strings in each subproblem.We can expect log(n) divisions.Each string returned by the subproblem can have maximum length of m.
 
----
+----
 
 ### References
 

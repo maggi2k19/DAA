@@ -71,6 +71,9 @@ Conquer- We will celebrate victory of the sub problem by calling further sub pro
 
 Combine- Given problems is solved by combining results from the recursively called sub problems.
 
+\includegraphics[scale=0.20]{Divide and Conquerjpg.jpg}
+\begin{center}\textbf{Figure 1:}Divide and Conquer Methodology\end{center}
+
 \section{Algorithm Analysis}
 To find longest common prefix from the given set of strings:
  
@@ -84,11 +87,16 @@ To find longest common prefix from the given set of strings:
 \end{itemize}
 \end{enumerate}
 
-\begin{center}
-\includegraphics[scale=0.15]{example_as04.jpg}
-\end{center}
+
+\includegraphics[scale=0.20]{example_as04.jpg}
+\begin{center}\textbf{Figure 2:} Finding LCP using Divide and Conquer\end{center}
 
 \section{Pseudo Code}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5},
+    basicstyle=\footnotesize,
+}
 
 \begin{lstlisting}
 arr[] has set of strings stored as an array,start and end are the variables used to point the start and end of arr[].string1,string2 strings to compare and find LCP.ans is the string used to store LCP of string 1 and string 2.
@@ -125,19 +133,44 @@ solveLCP function:
 
 We can observe that , we traversing every string in the given set of strings. Time complexity will be bigO(n*m) / O(n*m).Where n is Number of strings in the given set of strings and m is The longest string of all strings in the set.
 
+
 \subsection{Space Complexity}
 
 The space complexity of the Program is O(m*log(n)) Because of the space allocation for resultant strings in each subproblem.We can expect log(n) divisions.Each string returned by the subproblem can have maximum length of m.
 
+\section{Experimental Analysis}
+3D representation of time complexity are plotted :\newline
+\includegraphics[scale=0.20]{time_plot.png}
+\begin{center}\textbf{Figure 3:} Time Complexity O(n*m)\end{center}
+
+3D representation of Space complexity are plotted :\newline
+\includegraphics[scale=0.20]{space_plot.png}
+\begin{center}\textbf{Figure 3:} Space Complexity O(m*log(n))\end{center}
 
 \section{Conclusion}
 Using Divide and Conquer algorithm , we have our time complexity to be O(n*m).\newline
 This can be used in Constructing suffix tree , finding the number of occurrences in a pattern.
 
+\section{Applications}
+Divide and Conquer is a wide variety of algorithmic technique which believes on the strategy of division of the task and then combining them to form the required solution according to the requirement of the question.This methodology has many predefined algorithms which work on the basis of Divide and Conquer. Some of the applications of the Divide and Conquer Approach are:
+
+\begin{enumerate}
+\item \textbf{Merge Sort}
+\item \textbf{Quick Sort}
+\item \textbf{Binary Search} 
+\item \textbf{Segment Trees} 
+\item  \textbf{Strassen’s Algorithm} etc many more.
+\end{enumerate}
+
+\section{Acknowledgement}
+We are very much grateful to our Course instructor Mr.Rahul kala and our mentor, Mr.Md Meraz, who have provided the great opportunity to do this wonderful work on the subject of Data Structure and Algorithm Analysis specifically on methodologies of Divide and Conquer.
+
 \section{References}
+\begin{enumerate}
 1.Introduction to Algorithms by Thomas.H.cormen\newline
 2.https://afteracademy.com/blog/longest-common-prefix\newline
 3.https://afteracademy.com/blog/longest-common-prefix \newline
+\end{enumerate}
 
 \end{multicols}
 \end{document}

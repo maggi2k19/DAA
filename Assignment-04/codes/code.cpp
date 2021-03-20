@@ -2,14 +2,16 @@
     Problem Statement
     Given a set of strings, find the longest common prefix.(Using divide and conquer algorithm)
         -> Use random functions to generate elements.
-
     // we have used three functions to generate random elements 
         // getRandomNumber(l,r) : return a random number number between l to r 
         // getRandomChar() : return a random character between a-z or A-Z
         // getRandomString() : return a random string of variable length, using above two functions
-
     // we can also take input from user
         // for that we just have to uncomment the input codes, and comment the codes for random test generation
+
+    However it will be better to take the strings as input instead of getting random strings,
+    because
+    on random generation most of the times we will get an empty prefix.
 */
 
 #include<bits/stdc++.h>

@@ -119,7 +119,7 @@ int main(){
 
     // cout<<"Enter count of strings : \n";
     int numberOfStrings;
-    numberOfStrings = getRandomNumber(1,1000);
+    numberOfStrings = getRandomNumber(1,10);
     // cin>>numberOfStrings;
 
     // an array of strings to store all the strings
